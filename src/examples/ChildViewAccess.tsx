@@ -16,8 +16,8 @@ function ChildComponent() {
   const view = useArcgisView(ref);
   const handleClick = () => {
     view?.goTo({
-      center: [Math.random() * 360 - 180, Math.random() * 180 - 90],
-      zoom: Math.random() * 5,
+      center: [Math.random() * 300 - 150, Math.random() * 150 - 75],
+      zoom: Math.random() * 3 + 1.5,
     });
   };
 
