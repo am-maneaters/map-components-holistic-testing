@@ -71,7 +71,7 @@ const Examples: ActionItem[] = [
     component: lazy(() => import('./examples/ChildViewAccess.tsx')),
     code: () => import('./examples/ChildViewAccess.tsx?raw'),
     icon: 'map',
-  }
+  },
 ];
 
 export function App() {
@@ -152,9 +152,7 @@ export function App() {
                 {currentAction?.component && <currentAction.component />}
               </div>
               {currentAction.code && (
-                <div className="shadow-3xl overflow-auto rounded-lg xl:min-h-min xl:max-h-full xl:flex-1">
-                  <CodeDisplayAsync codePromise={currentAction?.code} />
-                </div>
+                <CodeDisplayAsync codePromise={currentAction?.code} />
               )}
             </div>
           </Suspense>

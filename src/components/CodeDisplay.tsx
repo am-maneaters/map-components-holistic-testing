@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
 import vscDark from 'react-syntax-highlighter/dist/esm/styles/prism/one-dark';
@@ -53,16 +53,27 @@ export function CodeDisplayAsync({
 }
 
 export function CodeDisplay({ code }: { code: string }) {
+  const ref = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
+
+  useEffect(() => {
+    ref.current?.scrollTo({top: 0, behavior: 'smooth'});
+  }, [code]);
+  
   return (
-    <SyntaxHighlighter
-      style={theme === 'dark' ? vscDark : vscLight}
-      customStyle={{ margin: 0 }}
-      codeTagProps={{ style: { fontFamily: 'Fira Code, monospace' } }}
-      lineProps={{ style: { fontFamily: 'Fira Code, monospace' } }}
-      language="tsx"
+    <div
+      ref={ref}
+      className="shadow-3xl overflow-auto rounded-lg xl:min-h-min xl:max-h-full xl:flex-1"
     >
-      {code.trim()}
-    </SyntaxHighlighter>
+      <SyntaxHighlighter
+        style={theme === 'dark' ? vscDark : vscLight}
+        customStyle={{ margin: 0 }}
+        codeTagProps={{ style: { fontFamily: 'Fira Code, monospace' } }}
+        lineProps={{ style: { fontFamily: 'Fira Code, monospace' } }}
+        language="tsx"
+      >
+        {code.trim()}
+      </SyntaxHighlighter>
+    </div>
   );
 }
