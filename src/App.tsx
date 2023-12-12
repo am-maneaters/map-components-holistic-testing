@@ -66,6 +66,12 @@ const Examples: ActionItem[] = [
     code: () => import('./examples/CustomUI.tsx?raw'),
     icon: 'widgets-group',
   },
+  {
+    name: 'ChildViewAccess',
+    component: lazy(() => import('./examples/ChildViewAccess.tsx')),
+    code: () => import('./examples/ChildViewAccess.tsx?raw'),
+    icon: 'map',
+  }
 ];
 
 export function App() {
