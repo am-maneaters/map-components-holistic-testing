@@ -32,6 +32,18 @@ const Examples: ActionItem[] = [
     component: lazy(() => import('./examples/AddLayer.tsx')),
     code: () => import('./examples/AddLayer.tsx?raw'),
     icon: 'layers',
+  },
+  {
+    name: "ReferenceElement",
+    component: lazy(() => import('./examples/ReferenceElement.tsx')),
+    code: () => import('./examples/ReferenceElement.tsx?raw'),
+    icon: "code",
+  },
+  {
+    name: "MapEvents",
+    component: lazy(() => import('./examples/MapEvents.tsx')),
+    code: () => import('./examples/MapEvents.tsx?raw'),
+    icon: "cursor",
   }
 ];
 
