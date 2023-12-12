@@ -14,6 +14,9 @@ import { CodeDisplayAsync } from './components/CodeDisplay.tsx';
 import { useTheme } from './contexts/ThemeProvider.tsx';
 import { ActionItem, useCalciteActionBar } from './hooks/calciteHooks.tsx';
 
+import logoDark from './assets/arcgis-react-logo-dark.png';
+import logoLight from './assets/arcgis-react-logo-light.png';
+
 const Examples: ActionItem[] = [
   {
     name: 'SimpleMap',
@@ -22,7 +25,7 @@ const Examples: ActionItem[] = [
     icon: 'map',
   },
   {
-    name: "SimpleScene",
+    name: 'SimpleScene',
     component: lazy(() => import('./examples/SimpleScene.tsx')),
     code: () => import('./examples/SimpleScene.tsx?raw'),
     icon: 'globe',
@@ -34,16 +37,16 @@ const Examples: ActionItem[] = [
     icon: 'layers',
   },
   {
-    name: "ReferenceElement",
+    name: 'ReferenceElement',
     component: lazy(() => import('./examples/ReferenceElement.tsx')),
     code: () => import('./examples/ReferenceElement.tsx?raw'),
-    icon: "code",
+    icon: 'code',
   },
   {
-    name: "MapEvents",
+    name: 'MapEvents',
     component: lazy(() => import('./examples/MapEvents.tsx')),
     code: () => import('./examples/MapEvents.tsx?raw'),
-    icon: "cursor",
+    icon: 'cursor',
   },
   {
     name: 'PropertyWatch',
@@ -62,7 +65,7 @@ const Examples: ActionItem[] = [
     component: lazy(() => import('./examples/CustomUI.tsx')),
     code: () => import('./examples/CustomUI.tsx?raw'),
     icon: 'widgets-group',
-  }
+  },
 ];
 
 export function App() {
@@ -111,8 +114,12 @@ export function App() {
                 '--calcite-font-size--1': '20px',
                 '--calcite-font-weight-normal': 'bold',
               }}
-              icon="globe"
-            ></CalciteAction>
+            >
+              <img
+                src={theme === 'light' ? logoLight : logoDark}
+                width="16px"
+              />
+            </CalciteAction>
 
             {actions}
 
