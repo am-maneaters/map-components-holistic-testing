@@ -41,9 +41,7 @@ const useArcgisView = (ref: RefObject<HTMLElement>) => {
     // set up event listener to check for parent arcgis-map
     const observer = new MutationObserver(() => {
       const parentMap = ref.current?.closest('arcgis-map');
-      if (parentMap) {
-        setView(parentMap.view);
-      }
+      setView(parentMap?.view);
     });
 
     observer.observe(document.body, {
