@@ -44,6 +44,18 @@ const Examples: ActionItem[] = [
     component: lazy(() => import('./examples/MapEvents.tsx')),
     code: () => import('./examples/MapEvents.tsx?raw'),
     icon: "cursor",
+  },
+  {
+    name: 'PropertyWatch',
+    component: lazy(() => import('./examples/PropertyWatch.tsx')),
+    code: () => import('./examples/PropertyWatch.tsx?raw'),
+    icon: 'view-visible',
+  },
+  {
+    name: 'SyncState',
+    component: lazy(() => import('./examples/SyncState.tsx')),
+    code: () => import('./examples/SyncState.tsx?raw'),
+    icon: 'refresh',
   }
 ];
 
