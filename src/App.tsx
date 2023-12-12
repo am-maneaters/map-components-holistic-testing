@@ -56,6 +56,12 @@ const Examples: ActionItem[] = [
     component: lazy(() => import('./examples/SyncState.tsx')),
     code: () => import('./examples/SyncState.tsx?raw'),
     icon: 'refresh',
+  },
+  {
+    name: 'CustomUI',
+    component: lazy(() => import('./examples/CustomUI.tsx')),
+    code: () => import('./examples/CustomUI.tsx?raw'),
+    icon: 'widgets-group',
   }
 ];
 
